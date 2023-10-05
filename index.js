@@ -6,7 +6,9 @@ const stripe = require("stripe")("sk_test_51NWumjSECg2tLwYxmgRqGBykI0VIgYdnE5evl
 
 app.use(express.json());
 app.use(cors());
-
+app.get('/',async(req,res)=>{
+res.status(200).json({msg:"okay"})
+})
 // checkout api
 app.post("/api/create-checkout-session",async(req,res)=>{
     const {products} = req.body;
